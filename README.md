@@ -6,6 +6,10 @@
 - Terraform 0.9.x
 - Your openstack RC file for auth
 
+## Create a private and public key
+
+You need to create an ssh private/public key set (or use an existing one). This will be used for the deployment process by terraform and ansible. 
+
 ## Download Kubespray
 
 First get kubespray release version:
