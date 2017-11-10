@@ -38,18 +38,18 @@ cp contrib/terraform/terraform.py $PORTAL_DEPLOYMENTS_ROOT'/'$PORTAL_DEPLOYMENT_
 cp -r inventory/group_vars $PORTAL_DEPLOYMENTS_ROOT'/'$PORTAL_DEPLOYMENT_REFERENCE'/'
 
 # Provision kubespray
-#ansible-playbook -b --become-user=root -i $PORTAL_DEPLOYMENTS_ROOT'/'$PORTAL_DEPLOYMENT_REFERENCE'/hosts' cluster.yml \
-#	--key-file "$PRIVATE_KEY" \
-#	-e bootstrap_os=ubuntu \
-#	-e host_key_checking=false \
-#	-e cloud_provider="openstack" \
-#	-e efk_enabled=false \
-#       -e kubelet_deployment_type=$KUBELET_DEPLOYMENT_TYPE \
-#	-e kube_api_pwd=$TF_VAR_kube_api_pwd \
-#	-e cluster_name=$TF_VAR_cluster_name \
-#	-e helm_enabled=true \
-#       -e kube_version=$KUBE_VERSION \
-#	-e kube_network_plugin="flannel"
+ansible-playbook -b --become-user=root -i $PORTAL_DEPLOYMENTS_ROOT'/'$PORTAL_DEPLOYMENT_REFERENCE'/hosts' cluster.yml \
+       --key-file "$PRIVATE_KEY" \
+       -e bootstrap_os=ubuntu \
+       -e host_key_checking=false \
+       -e cloud_provider="openstack" \
+       -e efk_enabled=false \
+       -e kubelet_deployment_type=$KUBELET_DEPLOYMENT_TYPE \
+       -e kube_api_pwd=$TF_VAR_kube_api_pwd \
+       -e cluster_name=$TF_VAR_cluster_name \
+       -e helm_enabled=true \
+       -e kube_version=$KUBE_VERSION \
+       -e kube_network_plugin="flannel"
 
 
 
